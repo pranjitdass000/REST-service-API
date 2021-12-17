@@ -35,11 +35,18 @@ public class UserController {
 //        this.userRepository = abcUserRepository;
 //    }
 
-    @PostMapping("/user")
+    //@PostMapping("/user")
     //    <return_type/void> methodName(input);
+//    public ResponseEntity<User> saveUser(@RequestBody User user){
+////        User savedUser = userService.saveUser(user);
+//        User savedUser = userRepository.save(user);
+//        return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
+//
+//    }
+
+    @PostMapping("/user")
     public ResponseEntity<User> saveUser(@RequestBody User user){
-//        User savedUser = userService.saveUser(user);
-        User savedUser = userRepository.save(user);
+        User savedUser = userService.saveUser(user);
         return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
 
     }
